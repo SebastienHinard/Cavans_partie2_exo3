@@ -1,0 +1,108 @@
+var c = document.getElementById('tiBiscuit');
+var ctx = c.getContext('2d');
+// grille
+ctx.beginPath();
+ctx.strokeStyle="lightgrey";
+ctx.lineWidth="3";
+for(var y=20; y<400; y+=40){
+    ctx.moveTo(0,y);
+    ctx.lineTo(400,y);
+}
+ctx.stroke();
+//ombre du corps
+ctx.strokeStyle="black";
+ctx.fillStyle="#black"
+ctx.beginPath();
+ctx.moveTo(110,150);
+ctx.lineTo(310,150);
+ctx.quadraticCurveTo(350,170,310,190);
+ctx.lineTo(255,190);
+ctx.lineTo(255,330);
+ctx.quadraticCurveTo(238,370,220,330);
+ctx.lineTo(220,290);
+ctx.quadraticCurveTo(210,270,200,290);
+ctx.lineTo(200,330);
+ctx.quadraticCurveTo(183,370,165,330);
+ctx.lineTo(165,190);
+ctx.lineTo(110,190);
+ctx.quadraticCurveTo(70,170,110,150);
+ctx.fill();
+//ombre de la tete
+ctx.beginPath();
+ctx.arc(210,100,60,0,Math.PI*2,false);
+ctx.fill();
+//corps
+ctx.strokeStyle="black";
+ctx.fillStyle="#976f0f"
+ctx.beginPath();
+ctx.moveTo(100,160);
+ctx.lineTo(300,160);
+ctx.quadraticCurveTo(340,180,300,200);
+ctx.lineTo(245,200);
+ctx.lineTo(245,340);
+ctx.quadraticCurveTo(228,380,210,340);
+ctx.lineTo(210,300);
+ctx.quadraticCurveTo(200,280,190,300);
+ctx.lineTo(190,340);
+ctx.quadraticCurveTo(173,380,155,340);
+ctx.lineTo(155,200);
+ctx.lineTo(100,200);
+ctx.quadraticCurveTo(60,180,100,160);
+ctx.fill();
+//tete
+ctx.beginPath();
+ctx.arc(200,110,60,0,Math.PI*2,false);
+ctx.fill();
+//yeux
+ctx.fillStyle="white";
+ctx.beginPath();
+ctx.arc(180,110,15,0,Math.PI*2,false);
+ctx.fill();
+ctx.beginPath();
+ctx.arc(220,110,15,0,Math.PI*2,false);
+ctx.fill();
+//pupilles
+ctx.beginPath();
+ctx.fillStyle="black";
+ctx.arc(190,110,5,0,Math.PI*2,false);
+ctx.fill();
+ctx.beginPath();
+ctx.arc(210,110,5,0,Math.PI*2,false);
+ctx.fill();
+//sourcils
+ctx.beginPath();
+ctx.strokeStyle="white";
+ctx.lineWidth="3";
+ctx.moveTo(165,85);
+ctx.quadraticCurveTo(180,70,195,85);
+ctx.stroke();
+ctx.moveTo(205,85);
+ctx.quadraticCurveTo(220,70,235,85);
+ctx.stroke();
+//bouche
+ctx.lineWidth="3";
+ctx.strokeStyle="red";
+ctx.beginPath();
+ctx.moveTo(180,140);
+ctx.quadraticCurveTo(200,150,220,140);
+ctx.moveTo(180,140);
+ctx.quadraticCurveTo(200,170,220,140);
+ctx.stroke();
+//bonbons
+ctx.fillStyle="#7a2976";
+ctx.beginPath();
+ctx.arc(200,220,10,0,Math.PI*2,false);
+ctx.arc(200,250,10,0,Math.PI*2,false);
+ctx.fill();
+//chaine
+var x=200;
+var y=160;
+ctx.strokeStyle="gold"
+for (var a=0; a<3.4 ; a+=.2){
+    ctx.beginPath();
+    ctx.arc(x+(Math.cos(a)*40),y+(Math.sin(a)*40),5,0,Math.PI*2,false);
+    ctx.stroke()
+}
+ctx.fillStyle="black";
+ctx.fillRect(0,0,60,400);
+ctx.fillRect(340,0,60,400);
